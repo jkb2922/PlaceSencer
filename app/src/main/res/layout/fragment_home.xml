@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Home Fragment ( 홈 화면 )
+-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        tools:ignore="UselessParent">
+        <!-- 스크롤 뷰의 자식은 하나만 있어야 하므로, 요소를 전부 LinearLayout으로 묶음. -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="50dp"
+                android:orientation="vertical"
+                android:background="#0080ff">
+            <!-- 관심지역 설정 텍스트 -->
+            <!-- 이 텍스트를 누르면 관심지역 다이얼로그로 관심지역을 선택할 수 있도록 해야 한다. -->
+            <LinearLayout
+                android:id="@+id/interestLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:text="@string/home_point_of_interest"
+                    android:textSize="16sp"
+                    android:textColor="@android:color/white"/>
+
+                <!-- interestPopupActivity에서 설정된 값을 넣는 곳 -->
+                <TextView
+                    android:id="@+id/interestPoint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp"/>
+
+            </LinearLayout>
+            <!-- 어디가 보고싶어?(검색란) -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="70dp">
+
+                <!-- 타이틀 -->
+                <TextView
+                    android:id="@+id/searchHead"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="@string/home_search"
+                    android:textColor="@android:color/white"
+                    android:textSize="36sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <!-- 검색바 레이아웃 -->
+                <LinearLayout
+                    android:id="@+id/listSearchLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/search_shape"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:orientation="horizontal"
+                    app:layout_constraintTop_toBottomOf="@+id/searchHead">
+
+                    <!-- 검색 바 / 입력창 -->
+                    <EditText
+                        android:id="@+id/searchText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="10dp"
+                        android:inputType="text"
+                        android:textSize="20sp"
+                        android:background="@android:color/transparent"
+                        android:hint="@string/home_search_hint"
+                        android:importantForAutofill="no" />
+
+                    <!-- 검색 바 / 확인 버튼 -->
+                    <!-- 누르면 입력된 문구가 포함된 페이지로 이동된다. -->
+                    <ImageView
+                        android:id="@+id/searchBtn"
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="5dp"
+                        android:src="@drawable/ic_search_black_24dp"
+                        android:contentDescription="@string/home_search_description" />
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+
+            <!-- 이런 곳은 어때? (리사이클러뷰 / 커뮤니티 페이지 이동 버튼) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="80dp"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="20dp">
+
+                    <!-- 이런 곳은 어때? - 텍스트 -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="@string/home_local_view"
+                        android:textSize="28sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <!-- 이런 곳은 어때? 이미지(+) -->
+                    <!-- 이미지를 누를 시 관심지역이 포함된 커뮤니티 페이지로 이동한다. -->
+                    <ImageView
+                        android:id="@+id/pointReviewMore"
+                        android:layout_width="30dp"
+                        android:layout_height="45dp"
+                        android:layout_marginEnd="15dp"
+                        android:src="@drawable/ic_add_black_24dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:contentDescription="@string/home_review_more" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!-- 이런 곳은 어때? 리스트 -->
+                <!-- 관심지역이 포함된 커뮤니티 페이지를 10개까지 출력한다. -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/interestView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"
+                    android:paddingStart="32dp"
+                    android:paddingEnd="16dp"
+                    android:clipToPadding="false"
+                    android:minHeight="140dp"
+                    android:scrollbars="none"
+                    tools:ignore="UnusedAttribute"/>
+
+            </LinearLayout>
+
+            <!-- 추천 여행지 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="20dp">
+
+                    <!-- 추천 여행지 - 텍스트 -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="@string/home_recommend_view"
+                        android:textSize="28sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!-- 추천 여행지 리스트 -->
+                <!-- 추천이 높은 글을 10개 출력한다. -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recommendedView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="32dp"
+                    android:paddingEnd="16dp"
+                    android:clipToPadding="false"
+                    android:minHeight="120dp"
+                    android:nestedScrollingEnabled="false"
+                    android:scrollbarFadeDuration="0"
+                    android:scrollbars="none"
+                    tools:ignore="UnusedAttribute" />
+
+            </LinearLayout>
+
+            <!-- 행사 중이에요! -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginBottom="60dp"
+                android:orientation="vertical">
+
+                <!-- 행사 중이에요! - 텍스트 -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="@string/home_event_list"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black" />
+
+                <!-- 행사 중이에요! 리스트 -->
+                <!-- 해당 리스트를 누를 시 이벤트 그림과 해당 이벤트를 홍보하는 페이지 링크를 출력한다. -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/eventList"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:nestedScrollingEnabled="false"
+                    android:minHeight="100dp"
+                    android:scrollbarFadeDuration="0"
+                    android:scrollbars="none"
+                    tools:ignore="UnusedAttribute" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    커뮤니티 페이지 - 커뮤니티 리스트 아이템
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:layout_marginStart="10dp"
+    android:layout_marginEnd="10dp"
+    android:layout_marginBottom="30dp"
+    android:background="@drawable/community_list_shape">
+<!--    android:paddingLeft="10dp"-->
+<!--    android:paddingRight="10dp"-->
+<!--    android:paddingTop="5dp"-->
+<!--    android:paddingBottom="5dp">-->
+<!--    android:background="@drawable/interest_point_selected_rec">-->
+
+    <!--<com.android.volley.toolbox.NetworkImageView
+            android:id="@+id/reviewThumbnail"
+            android:layout_width="100dp"
+            android:layout_height="100dp"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:layout_marginEnd="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/courseList"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="장소 또는 코스"
+                android:textSize="20sp"/>
+
+            <TextView
+                android:id="@+id/reviewTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="제 목"
+                android:textSize="30sp"/>
+
+            <TextView
+                android:id="@+id/reviewTag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="해시 태그"
+                android:textSize="16sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/commentImage"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@mipmap/ic_launcher"/>
+
+                <TextView
+                    android:id="@+id/comment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="5dp"
+                    android:text="댓글수"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/recommendImage"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@mipmap/ic_launcher"/>
+
+                <TextView
+                    android:id="@+id/reviewRecommend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="5dp"
+                    android:text="추천수"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/reviewViewsImage"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@mipmap/ic_launcher"/>
+
+                <TextView
+                    android:id="@+id/reviewViews"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="5dp"
+                    android:text="조회수"/>
+
+            </LinearLayout>
+
+    </LinearLayout>-->
+
+    <!-- 리뷰 제목 -->
+    <TextView
+        android:id="@+id/reviewTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:gravity="start"
+        android:singleLine="false"
+        android:textSize="30sp"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"/>
+
+    <!-- 리뷰 태그 -->
+    <TextView
+        android:id="@+id/reviewTag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginEnd="10dp"
+        android:textSize="20sp"/>
+
+    <!-- 리뷰 이미지 -->
+    <com.android.volley.toolbox.NetworkImageView
+        android:id="@+id/reviewThumbnail"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"/>
+
+    <!-- 리뷰 코스 -->
+    <TextView
+        android:id="@+id/courseList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="10dp"
+        android:textSize="14sp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:paddingBottom="15dp"
+        android:orientation="horizontal"
+        android:baselineAligned="false">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="start"
+            android:layout_weight="1"
+            tools:ignore="UseCompoundDrawables">
+
+            <!-- 댓글 이미지 -->
+            <ImageView
+                android:id="@+id/commentImage"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_comment_black_24dp"
+                android:contentDescription="@string/community_comment_Image" />
+
+            <!-- 댓글 수 -->
+            <TextView
+                android:id="@+id/comment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="10dp"
+                android:textSize="16sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal"
+            tools:ignore="UseCompoundDrawables">
+
+            <!-- 추천 이미지 -->
+            <ImageView
+                android:id="@+id/recommendImage"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_like_border_black_24dp"
+                android:contentDescription="@string/community_recommend_Image" />
+
+            <!-- 추천 수 -->
+            <TextView
+                android:id="@+id/reviewRecommend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="10dp"
+                android:textSize="16sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:layout_marginEnd="10dp"
+            android:orientation="horizontal"
+            tools:ignore="UseCompoundDrawables">
+
+            <!-- 조회 이미지 -->
+            <ImageView
+                android:id="@+id/reviewViewsImage"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_remove_red_eye_black_24dp"
+                android:contentDescription="@string/community_reviews_Image" />
+
+            <!-- 조회 수 -->
+            <TextView
+                android:id="@+id/reviewViews"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="10dp"
+                android:textSize="16sp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

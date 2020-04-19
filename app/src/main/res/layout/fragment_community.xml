@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    커뮤니티 화면 - 검색바, 리스트 출력
+
+    검색어를 서버에 넘겨 결과를 출력
+    검색어가 없으면 최근 글순서로 출력
+    작성일자/추천순으로 정렬 가능
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/communityListScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="UselessParent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:orientation="vertical"
+                android:background="#0088FF">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center"
+                    android:text="@string/menu_community"
+                    android:textSize="36sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/white"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@android:color/white"/>
+
+                <LinearLayout
+                    android:id="@+id/community"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/search_shape"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:orientation="horizontal">
+
+
+                    <EditText
+                        android:id="@+id/communityEdit"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="10dp"
+                        android:inputType="text"
+                        android:textSize="20sp"
+                        android:background="@android:color/transparent"
+                        android:hint="@string/community_search_hint"
+                        android:importantForAutofill="no" />
+
+                    <!-- 검색 바 / 확인 버튼 -->
+                    <!-- 누르면 입력된 문구가 포함된 페이지로 이동된다. -->
+                    <ImageView
+                        android:id="@+id/communityImage"
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="5dp"
+                        android:src="@drawable/ic_search_black_24dp"
+                        android:contentDescription="@string/home_search_description" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="10dp"
+                android:gravity="end"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/sortCreateTime"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/search_shape"
+                    android:text="@string/community_createTime_btn"
+                    tools:ignore="ButtonStyle" />
+
+                <Button
+                    android:id="@+id/sortRecommend"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/search_shape"
+                    android:text="@string/community_recommended_btn"
+                    tools:ignore="ButtonStyle" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:descendantFocusability="blocksDescendants">
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/communityList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="20dp"
+                    tools:ignore="UnusedAttribute"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/communityList"
+                    android:layout_centerHorizontal="true"
+                    android:orientation="horizontal">
+
+                    <ProgressBar
+                        android:id="@+id/pb_loading"
+                        style="?android:attr/progressBarStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="visible" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="   Loading..." />
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

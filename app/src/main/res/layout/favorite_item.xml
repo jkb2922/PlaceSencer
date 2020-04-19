@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    설정 페이지 - 즐겨찾기 리사이클러뷰 리스트
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- 즐겨찾기 대표 이미지 -->
+        <com.android.volley.toolbox.NetworkImageView
+            android:id="@+id/favoriteThumbnail"
+            android:layout_width="100dp"
+            android:layout_height="100dp"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:layout_marginEnd="10dp"
+            android:layout_gravity="center_vertical"
+            android:orientation="vertical">
+
+            <!-- 즐겨찾기 리뷰 제목 -->
+            <TextView
+                android:id="@+id/favoriteTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="30sp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- 즐겨찾기 리뷰 요소가 달릴 레이아웃 -->
+    <LinearLayout
+        android:id="@+id/favoriteDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <!-- 리뷰 태그 -->
+        <TextView
+            android:id="@+id/favoriteTag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:textSize="16sp"/>
+
+        <!-- 리뷰 코스 -->
+        <TextView
+            android:id="@+id/favoriteCourse"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"/>
+
+    </LinearLayout>
+
+</LinearLayout>

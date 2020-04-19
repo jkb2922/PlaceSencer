@@ -1,0 +1,157 @@
+<resources>
+    <string name="facebook_app_id">1719814581503807</string>
+    <string name="fb_login_protocol_scheme">fb1719814581503807</string>
+    <string name="kakao_app_key">e13d07994c38844e4092a0883331afb1</string>
+
+    <string name="app_name">플레이스 센서</string>
+
+
+    <!-- 하단 메뉴  -->
+    <string name="menu_home">홈</string>
+    <string name="menu_community">커뮤니티</string>
+    <string name="menu_plan">여행 계획</string>
+    <string name="menu_settings">설정</string>
+
+
+    <!-- 홈 -->
+    <string name="home_point_of_interest">관심지역 : </string>
+    <string name="home_point_title">관심지역 선택</string>
+    <string name="home_point_OK">확인</string>
+    <string name="home_point_CANCEL">취소</string>
+
+    <string name="home_search">여행을 떠나요</string>
+    <string name="home_search_hint">대게를 향해서! \'울진\'은 어때요?</string>
+    <string name="home_search_description">여행지 검색 실행</string>
+
+    <string name="home_local_view">이런 곳은 어때요?</string>
+    <string name="home_review_more">리뷰 더 보기(More reviews)</string>
+
+    <string name="home_recommend_view">추천 여행지</string>
+
+    <string name="home_event_list">행사 중이에요!</string>
+    <string name="home_event_popup">이벤트 정보</string>
+    <string name="home_event_image_description">이벤트 팜플릿</string>
+    <string name="home_event_link">이벤트 페이지로 이동하기</string>
+    <string name="home_event_OK">뒤로 가기</string>
+
+
+    <!-- 관심지역 팝업용 -->
+    <string name="seoul">서울</string>
+    <string name="busan">부산</string>
+    <string name="daegu">대구</string>
+    <string name="incheon">인천</string>
+    <string name="gwangju">광주</string>
+    <string name="daegeon">대전</string>
+    <string name="ulsan">울산</string>
+    <string name="sejong">세종</string>
+    <string name="gyeonggi">경기</string>
+    <string name="gangwon">강원</string>
+    <string name="chungcheong">충청</string>
+    <string name="jeonla">전라</string>
+    <string name="gyeongsang">경상</string>
+    <string name="jeju">제주</string>
+
+
+    <!-- 커뮤니티 -->
+    <string name="community_search_hint">가고 싶은 곳을 검색해보세요!</string>
+    <string name="community_search_hint2">목적지 입력</string>
+    <string name="community_search_btn">게시글 가져오기</string>
+    <string name="community_createTime_btn">작성일순</string>
+    <string name="community_recommended_btn">추천순</string>
+    <string name="community_comment_Image">댓글 이미지</string>
+    <string name="community_recommend_Image">추천 이미지</string>
+    <string name="community_reviews_Image">조회 이미지</string>
+
+
+    <!-- 커뮤니티 디테일 -->
+    <string name="community_favorite">즐겨찾기</string>
+    <string name="community_reviews_text">조회수 : </string>
+    <string name="community_recommend">추천</string>
+    <string name="community_comment_content">댓글</string>
+    <string name="community_comment">댓글 내용 입력</string>
+    <string name="community_comment_course">Course</string>
+    <string name="community_place1_edit">장소 1 입력</string>
+    <string name="community_place2_edit">장소 2 입력</string>
+    <string name="community_place3_edit">장소 3 입력</string>
+    <string name="community_place4_edit">장소 4 입력</string>
+    <string name="community_comment_confirm">등록</string>
+
+
+    <!-- 커뮤니티 디테일 - 댓글 리스트 -->
+    <string name="community_list_platform_description">platformImage</string>
+    <string name="community_list_modify">수정</string>
+    <string name="community_list_pipe"> | </string>
+    <string name="community_list_delete">삭제</string>
+    <string name="community_list_date">등록일자</string>
+    <string name="community_list_recommend">추천</string>
+
+
+    <!-- 커뮤니티 디테일 - 댓글 수정 -->
+    <string name="community_detail_comment_modify_title">댓글 수정</string>
+    <string name="community_detail_comment_modify">댓글 내용 입력</string>
+    <string name="modify_place1">장소 1 : </string>
+    <string name="modify_place2">장소 2 : </string>
+    <string name="modify_place3">장소 3 : </string>
+    <string name="modify_place4">장소 4 : </string>
+    <string name="modify_place1_edit">장소 1 입력</string>
+    <string name="modify_place2_edit">장소 2 입력</string>
+    <string name="modify_place3_edit">장소 3 입력</string>
+    <string name="modify_place4_edit">장소 4 입력</string>
+    <string name="modify_ok">수정</string>
+    <string name="modify_cancel">확인</string>
+
+
+    <!-- 커뮤니티 디테일 - 댓글 코스 지도 -->
+    <string name="community_detail_course_map">코스 지도</string>
+
+
+    <!-- 설정 페이지 -->
+    <string name="settings_notice">공지사항</string>
+    <string name="settings_favorite">즐겨찾기</string>
+    <string name="settings_alarm">알림설정</string>
+    <string name="settings_alarm_set_comment">댓글 알림</string>
+    <string name="settings_alarm_set_notice">앱 공지 알림</string>
+    <string name="settings_login">로그인</string>
+
+
+    <!-- 설정 공지사항 페이지 -->
+    <string name="settings_notice_title">공지사항</string>
+
+
+    <!-- 설정 공지사항 페이지 - 공지사항 리스트 -->
+    <string name="settings_notice_list_date">날짜</string>
+    <string name="settings_notice_list_title">제목</string>
+    <string name="settings_notice_list_content">내용</string>
+
+
+    <!-- 설정 즐겨찾기 페이지 -->
+    <string name="settings_favorite_title">즐겨찾기</string>
+ed
+
+    <!-- MainActivity MSG -->
+    <string name="main_end_msg">플레이스 센서를 종료하시겠습니까?</string>
+
+    <!--CommentActivity 관련 MSG-->
+    <string name="comment_no_address_msg">해당되는 주소 정보는 없습니다.</string>
+    <string name="comment_cancel_msg">취소 하였습니다.</string>
+    <string name="comment_edit_msg">수정되었습니다.</string>
+
+    <!--Community 관련 msg-->
+    <string name="community_need_login_msg">로그인이 필요합니다.</string>
+    <string name="community_need_search_msg">검색어를 입력해주세요.</string>
+    <string name="community_need_favorite_msg">관심 여행지가 설정되지 않았습니다.</string>
+    <string name="community_no_list_msg">목록이 더 존재하지 않아요!</string>
+    <!--Plan Activity 관련 msg-->
+    <string name="plan_need_edit_msg">제목, 위치는 반드시 입력되어야 합니다.</string>
+
+    <!--공용 msg-->
+    <string name="all_network_error_msg">서버와의 통신에 문제가 발생했습니다</string>
+    <string name="all_cancel_msg">취소 하였습니다.</string>
+    <string name="all_login_ok_msg">로그인 되었습니다.</string>
+    <string name="all_login_error_msg">로그에 실패하였습니다.</string>
+    <string name="all_logout_msg">로그아웃 되었습니다.</string>
+
+
+</resources>
+
+

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    설정 공지사항 페이지 - 공지사항 리스트
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!-- 공지사항 아이템 날짜-->
+    <TextView
+        android:id="@+id/noticeDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:gravity="end"
+        android:text="@string/settings_notice_list_date"
+        android:textSize="16sp"/>
+
+    <!-- 공지사항 제목 -->
+    <TextView
+        android:id="@+id/noticeTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/settings_notice_list_title"
+        android:textSize="36sp"/>
+
+    <!-- 구분선 -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="#000000"/>
+
+    <!-- 공지사항 내용이 담길 레이아웃 -->
+    <LinearLayout
+        android:id="@+id/noticeContentList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="30dp"
+        android:visibility="gone"
+        android:orientation="vertical">
+
+        <!-- 공지사항 내용 -->
+        <TextView
+            android:id="@+id/noticeContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:text="@string/settings_notice_list_content"
+            android:textSize="20sp"/>
+
+        <!-- 구분선 -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="#000000"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

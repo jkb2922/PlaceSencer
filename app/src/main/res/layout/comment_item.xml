@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    커뮤니티 디테일 페이지 - 댓글 리스트
+
+    댓글 리사이클러뷰에 등록될 리스트 아이템
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="15dp"
+    android:layout_marginBottom="15dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- 해당 유저의 플랫폼 이미지를 가져온다. -->
+            <ImageView
+                android:id="@+id/commentUserPlatform"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@mipmap/ic_launcher"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:contentDescription="@string/community_list_platform_description" />
+
+            <!-- 작성 유저의 이름을 출력한다 -->
+            <TextView
+                android:id="@+id/commentUserName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/commentUserPlatform"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- 댓글 수정/삭제가 등록될 레이아웃 -->
+            <LinearLayout
+                android:id="@+id/commentControl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <!-- 댓글 수정 -->
+                <TextView
+                    android:id="@+id/commentUpdate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/community_list_modify"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/textView4"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/community_list_pipe"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/commentRemove"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <!-- 댓글 삭제 -->
+                <TextView
+                    android:id="@+id/commentRemove"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/community_list_delete"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </LinearLayout>
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <!-- 댓글 작성일자 -->
+            <TextView
+                android:id="@+id/createdDateText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/community_list_date"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- 댓글 추천 이미지 -->
+            <ImageView
+                android:id="@+id/commentRecommend"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_like_border_black_24dp"
+                android:layout_marginEnd="5dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/recommendNum"
+                app:layout_constraintTop_toTopOf="parent"
+                android:contentDescription="@string/community_list_recommend" />
+
+            <!-- 댓글 추천 수 -->
+            <TextView
+                android:id="@+id/recommendNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- 댓글 내용 -->
+        <TextView
+            android:id="@+id/commentContent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:paddingTop="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="20dp"
+            android:textSize="24sp"/>
+
+    </LinearLayout>
+
+    <!-- 댓글 코스 -->
+    <TextView
+        android:id="@+id/commentCourse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="30dp"
+        android:textSize="16sp"/>
+
+
+
+</LinearLayout>

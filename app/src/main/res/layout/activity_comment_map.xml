@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    커뮤니티 디테일 페이지 - 댓글의 지도 팝업
+
+    댓글에 있는 코스를 가져와 지도에 마커, 라인으로 표시한다
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="362dp"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="-20dp"
+    android:orientation="vertical"
+    tools:context=".Community.CommentMapActivity">
+
+    <!-- 타이틀 레이아웃 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- 타이틀 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="53dp"
+            android:background="#ff7a00"
+            android:gravity="center"
+            android:text="@string/community_detail_course_map"
+            android:textColor="#fff"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <!-- 네이버 지도 -->
+    <fragment
+        android:id="@+id/commentMap"
+        android:layout_width="330dp"
+        android:layout_height="400dp"
+        android:layout_gravity="center"
+        android:layout_marginEnd="-3dp"
+        android:name="com.naver.maps.map.MapFragment"/>
+
+</LinearLayout>

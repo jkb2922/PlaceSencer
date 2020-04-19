@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_home"
+        android:enabled="true"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:checked="true"
+        android:title="@string/menu_home"/>
+
+    <item
+        android:id="@+id/menu_community"
+        android:enabled="true"
+        android:icon="@drawable/ic_content_paste_black_24dp"
+        android:title="@string/menu_community"/>
+
+    <item
+        android:id="@+id/menu_plan"
+        android:enabled="true"
+        android:icon="@drawable/ic_card_travel_black_24dp"
+        android:title="@string/menu_plan"/>
+
+    <item
+        android:id="@+id/menu_settings"
+        android:enabled="true"
+        android:icon="@drawable/ic_settings_black_24dp"
+        android:title="@string/menu_settings"/>
+
+</menu>

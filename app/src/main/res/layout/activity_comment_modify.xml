@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    커뮤니티 디테일 페이지 - 댓글 수정 팝업
+
+    기존 댓글의 내용, 코스를 가져와 출력한다.
+    이를 편집하여 확인 버튼을 누르면 서버로 전송한다.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="360dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    tools:context=".Community.CommentModifyActivity">
+
+    <!-- 타이틀 레이아웃 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- 타이틀 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="53dp"
+            android:background="#ff7a00"
+            android:gravity="center"
+            android:text="@string/community_detail_comment_modify_title"
+            android:textColor="#fff"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/community_detail_comment_modify"/>
+
+        <!-- 댓글 내용 수정 -->
+        <EditText
+            android:id="@+id/commentModifyContent"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:inputType="text"
+            android:hint="@string/community_detail_comment_modify"
+            android:importantForAutofill="no" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="340dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center">
+
+            <!-- 네이버 지도 -->
+            <fragment
+                android:id="@+id/map_view"
+                android:name="com.naver.maps.map.MapFragment"
+                android:layout_width="320dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- 장소 1, 2, 3, 4 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/modify_place1"/>
+
+            <!-- 장소 1 -->
+            <EditText
+                android:id="@+id/commentModifyPlace1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/modify_place1_edit"
+                android:inputType="text"
+                android:importantForAutofill="no" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/modify_place2"/>
+
+            <!-- 장소 2 -->
+            <EditText
+                android:id="@+id/commentModifyPlace2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/modify_place2_edit"
+                android:inputType="text"
+                android:importantForAutofill="no" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/modify_place3"/>
+
+            <!-- 장소 3 -->
+            <EditText
+                android:id="@+id/commentModifyPlace3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/modify_place3_edit"
+                android:inputType="text"
+                android:importantForAutofill="no" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/modify_place4"/>
+
+            <!-- 장소 4 -->
+            <EditText
+                android:id="@+id/commentModifyPlace4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/modify_place4_edit"
+                android:inputType="text"
+                android:importantForAutofill="no" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- 구분선-->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#66bdbdbd" />
+
+    <!-- 확인 / 취소 레이아웃 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <!-- 확인 버튼 -->
+        <Button
+            android:id="@+id/commentModifyOk"
+            android:layout_width="match_parent"
+            android:layout_height="53dp"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:gravity="center"
+            android:padding="16dp"
+            android:text="@string/modify_ok"
+            android:textColor="#ff7a00"
+            android:textSize="15sp"
+            tools:ignore="ButtonStyle" />
+
+        <!-- 취소 버튼 -->
+        <Button
+            android:id="@+id/commentModifyCancel"
+            android:layout_width="match_parent"
+            android:layout_height="53dp"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:gravity="center"
+            android:padding="16dp"
+            android:text="@string/modify_cancel"
+            android:textColor="#ff7a00"
+            android:textSize="15sp"
+            tools:ignore="ButtonStyle" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

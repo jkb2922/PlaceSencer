@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    커뮤니티 디테일 페이지 - 커뮤니티 리스트 아이템의 내용을 출력한다.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:id="@+id/reviewScroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="UselessParent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:orientation="vertical">
+
+            <!-- 리뷰 태그 -->
+            <TextView
+                android:id="@+id/tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- 리뷰 제목 -->
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:textSize="36sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"/>
+
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- 리뷰 작성시간 -->
+                <TextView
+                    android:id="@+id/creatTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:textSize="16sp"
+                    android:textColor="@android:color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <!-- 리뷰 조회수 -->
+                <TextView
+                    android:id="@+id/views"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="20dp"
+                    android:layout_gravity="end"
+                    android:gravity="end"
+                    android:text="@string/community_reviews_text"
+                    android:textSize="16sp"
+                    android:textColor="@android:color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="RtlSymmetry" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/imageList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <!-- 이미지, 내용이 이 레이아웃 안에 등록됨 -->
+                <LinearLayout
+                    android:id="@+id/imageViewPlus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                </LinearLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <!-- 리뷰 코스 -->
+                    <TextView
+                        android:id="@+id/course"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:text=""/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <!-- 네이버 지도 -->
+                        <fragment
+                            android:id="@+id/reviewDetailMap"
+                            android:name="com.naver.maps.map.MapFragment"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+
+                        <!-- 네이버 지도 스크롤용 이미지뷰 -->
+                        <ImageView
+                            android:id="@+id/transparent_image"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@color/fui_transparent"
+                            tools:ignore="ContentDescription" />
+
+
+                    </RelativeLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal">
+
+                    <!-- 즐겨찾기 버튼 -->
+                    <ImageView
+                        android:id="@+id/favoriteBtn"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/ic_star_border_black_24dp"
+                        android:contentDescription="@string/community_favorite" />
+
+                    <!-- 추천 버튼 -->
+                    <ImageView
+                        android:id="@+id/recommendBtn"
+                        android:layout_marginStart="20dp"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/ic_like_border_black_24dp"
+                        android:contentDescription="@string/community_recommend" />
+
+                    <!-- 추천수 -->
+                    <TextView
+                        android:id="@+id/recommend"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="10dp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- 구분선 -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:background="#000000"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/community_comment_content"/>
+
+                <!-- 댓글 입력 -->
+                <EditText
+                    android:id="@+id/comment"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="7"
+                    android:hint="@string/community_comment"
+                    android:importantForAutofill="no"
+                    android:inputType="text" />
+
+                <!-- 코스 입력 레이아웃 -->
+                <LinearLayout
+                    android:id="@+id/commentLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/community_comment_course"/>
+
+                    <!-- 장소 1 -->
+                    <EditText
+                        android:id="@+id/place1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/community_place1_edit"
+                        android:inputType="text"
+                        android:importantForAutofill="no" />
+
+                    <!-- 장소 2 -->
+                    <EditText
+                        android:id="@+id/place2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/community_place2_edit"
+                        android:inputType="text"
+                        android:importantForAutofill="no" />
+
+                    <!-- 장소 3 -->
+                    <EditText
+                        android:id="@+id/place3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/community_place3_edit"
+                        android:inputType="text"
+                        android:importantForAutofill="no" />
+
+                    <!-- 장소 4 -->
+                    <EditText
+                        android:id="@+id/place4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/community_place4_edit"
+                        android:inputType="text"
+                        android:importantForAutofill="no" />
+
+                </LinearLayout>
+
+                <!-- 댓글 저장 -->
+                <Button
+                    android:id="@+id/commentInsertBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="@string/community_comment_confirm"/>
+
+            </LinearLayout>
+
+            <!-- 댓글 리스트 -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/commentListViews"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                android:orientation="vertical"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                tools:ignore="UnusedAttribute" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

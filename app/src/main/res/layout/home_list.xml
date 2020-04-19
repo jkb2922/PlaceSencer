@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    홈 화면 리사이클러뷰(관심지역/추천) 아이템
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="13dp">
+
+    <!-- 서버에서 받아온 이미지뷰 -->
+    <envyandroid.org.graduationproject.AddLibraray.CircularNetworkImageView
+        android:id="@+id/homeImage"
+        android:layout_width="120dp"
+        android:layout_height="140dp"
+        android:background="@drawable/circle_shape"
+        android:scaleType="fitXY"/>
+
+
+    <!-- 리뷰 타이틀 -->
+    <TextView
+        android:id="@+id/homeTitle"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"/>
+
+
+</LinearLayout>
